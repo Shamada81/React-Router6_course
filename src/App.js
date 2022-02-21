@@ -1,18 +1,26 @@
 import React from "react";
+import {Route, Routes, Link} from 'react-router-dom'
+
+import {Homepage} from "./pages/Homepage";
+import {Aboutpage} from "./pages/Aboutpage";
+import {Blogpage} from "./pages/Blogpage";
+import {Notfoundpage} from "./pages/Notfoundpage";
+
+import { Layout } from "./components/Layout";
 
 function App() {
-  return (
-    <>
-      <header>
-          <a href="/">Home</a>
-          <a href="/posts">Blog</a>
-          <a href="/about">About</a>
-      </header>
-        <div>
-            <h1>Get started with React-Router 6</h1>
-        </div>
-    </>
-  );
+	return (
+		<>
+			<Routes>
+				<Route path='/' element={<Layout />}>
+					<Route index element={<Homepage />}/>
+					<Route path='about' element={<Aboutpage />}/>
+					<Route path='posts' element={<Blogpage />}/>
+					<Route path='*' element={<Notfoundpage />} />
+				</Route>
+			</Routes>
+		</>
+	);
 }
 
 export default App;
