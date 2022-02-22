@@ -6,9 +6,9 @@ const Layout = () => {
 	return (
 		<>
 			<header>
-				<CustomLink to="/" className={setActive}>Home</CustomLink>
-				<CustomLink to="/posts" className={setActive}>Blog</CustomLink>
-				<CustomLink to="/about" className={setActive}>About</CustomLink>
+				<CustomLink to="/">Home</CustomLink>
+				<CustomLink to="/posts">Blog</CustomLink>
+				<CustomLink to="/about">About</CustomLink>
 			</header>
 
 			<main className='container'>
